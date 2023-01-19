@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 
 export async function appRoutes(app: FastifyInstance) {
   app.get('/habits', async () => {
-    return 'oi'
+    return prisma.habit.findMany()
   })
 
   app.post('/habits', async (request) => {
@@ -65,6 +65,10 @@ export async function appRoutes(app: FastifyInstance) {
       }
     })
 
-    return { possibleHabits, day }
+    const completedHabits = day?.dayHabits.map((dayHabit) => {
+      return dayHabit.habit_id
+    })
+
+    return { possibleHabits, completedHabits }
   })
 }
