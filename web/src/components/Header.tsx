@@ -10,14 +10,12 @@ export function Header() {
       <img src={logoImage} alt="Habits" />
 
       <Dialog.Root>
-        <Dialog.Trigger>
-          <button
-            type="button"
-            className="border border-violet-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-300"
-          >
-            <Plus size={20} className="text-violet-500" />
-            Novo Hábito
-          </button>
+        <Dialog.Trigger
+          type="button"
+          className="border border-violet-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-300"
+        >
+          <Plus size={20} className="text-violet-500" />
+          Novo Hábito
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="w-screen h-screen bg-black/80 fixed inset-0" />
